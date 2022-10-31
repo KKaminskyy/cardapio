@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'Cafe Francoise';
+    src: url(../fonts/Cafe\ Francoise_D.otf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root{
+    --color01: #FFCA17;
+    --color02: #5e3929;
+    --color03: #452A1E;
+    --color04: #131313;
+    --color05: #d00e29;
+    --color06: #4e392f;
+
+    --title: 'Cafe Francoise';
+    --text: 'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--text);
+    font-weight: 400;
+    color: #999;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 1140px;
+    margin: auto;
+}
+
+.section-header{
+    width: 150px;
+}
+
+.title-section{
+    position: relative;
+    padding: 20px 0 5px 4px;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+.title-section::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #999;
+    z-index: 1;
+}
+
+.default-btn{
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px auto;
+    background: transparent;
+    border: 0;
+    border-radius: 20px;
+    color: #ddd;
+    background-color: var(--color05);
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font: bold 1rem arial;
+}
+
+.btn-qt{
+    border: 0;
+    background-color: transparent;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.qtarea{
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 20px;
+    width: 70px;
+    height: 25px;
+    background: #eee;
+    color: #222;
+    border-radius: 10px;
+}
+
+.qtarea--qt{
+    width: 20px;
+    text-align: center;
+}
+
+.btn-extra--size{
+    cursor: pointer;
+    padding: 5px 30px;
+    background-color: #eee;
+    border: 0;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-extra--size:hover{
+    background-color: #6668; 
+}
+
+.btn-extra--size.selected span,
+.btn-extra--size.selected{
+    background-color: #A61212;
+    color: white;
+}
+
+.btn-extra--size span{
+    display: block;
+    font-size: .6rem;
+    color: #222;
+}
+.btn-extra--size span::after{
+    content: ' Fatias';
+}
+
+.btn-cart:hover{
+    background-color: #b13737;
+}
+
+.star-rating{
+    display: flex;
+}
+
+.star-icon{
+    list-style: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.star-icon.active{ color: #ffe500; }
+
+.star-icon::before{content: '\2605';}
+
+.close-default{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.close-default::before{
+    content: '\1F5D9';
+}
+
