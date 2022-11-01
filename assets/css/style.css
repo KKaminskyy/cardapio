@@ -84,24 +84,28 @@ nav a:hover{
 
 .banner-title >span{font-family: cursive;}
 
+.models {display: none;}
+
 .offers{
     width: 100vw;
     height: 100vh;
     background-color: var(--color02);
+    overflow: hidden;
 }
+
+.offers .container {overflow: hidden;}
 
 .offers-area{
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 272px);
-    grid-auto-rows: min(450px);
+    display: flex;
     gap: 10px;
     padding: 10px;
     margin-top: 50px;
-    width: 100%;
+    width: 200vw;
 }
 
 .offers-area--item{
+    flex-basis: 275px;
     position: relative;
     box-shadow: 0px 2px 0px 0px #ab684b;;
     border-radius: 10px;
@@ -162,11 +166,6 @@ nav a:hover{
 
 .item-content--current-price{ font: normal 1.6rem var(--text);}
 
-.item-content--prices-old-price::before,
-.item-content--current-price::before {
-    content: 'R$ ';
-}
-
 .product{
     background-color: var(--color03);
     width: 100vw;
@@ -217,6 +216,7 @@ nav a:hover{
 .product-item--info-name{
     font: 400 2rem var(--text);
     color: #fff;
+    text-align: center;
 }
 
 .product-item--price{
@@ -234,6 +234,8 @@ nav a:hover{
     justify-content: center;
     align-items: center;
     background-color: #fff4;
+    transition: ease all .5s;
+    z-index: 99;
 }
 
 .product-window-body{
@@ -322,12 +324,16 @@ nav a:hover{
 .product-window-info--cancel{
     cursor: pointer;
     border: 0;
+    outline: 0;
+    padding: 5px 10px;
     background-color: transparent;
     font: normal 1.3rem var(--text);
     letter-spacing: 3px;
     color: #999;
     margin-left: 15px;
 }
+
+.product-window-info--cancel-mobile{display: none;}
 
 aside{
     position: fixed;

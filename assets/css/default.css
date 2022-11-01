@@ -72,6 +72,10 @@ body{
     font: bold 1rem arial;
 }
 
+.default-btn:hover{
+    background-color: #f71e3b;
+}
+
 .btn-qt{
     border: 0;
     background-color: transparent;
@@ -123,10 +127,6 @@ body{
 }
 .btn-extra--size span::after{
     content: ' Fatias';
-}
-
-.btn-cart:hover{
-    background-color: #b13737;
 }
 
 .star-rating{
