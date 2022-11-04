@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://css.gg/shopping-cart.css' rel='stylesheet'>
+    <link href='https://css.gg/user.css' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -21,10 +23,10 @@
             </section>
             <nav>
                 <ul>
-                    <li><a href="#haburger">Burger</a></li>
+                    <li><a href="#burger">Burger</a></li>
                     <li><a href="#pizza">Pizza</a></li>
-                    <li><a href="#dessert">Dessert</a></li>
-                    <li><a href="#drinks">Drinks</a></li>
+                    <li><a href="#login" class="open-login"><i class="gg-user"></i></a></li>
+                    <li><a href="#Cart" class="open-cart"><i class="gg-shopping-cart"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -68,10 +70,24 @@
             <div class="product-item--info">
                 <h2 class="product-item--info-name"></h2>
                 <span class="product-item--price"></span>
-                <button class="default-btn">Add to Cart</button>
+                <button class="default-btn product-btn-cart">Add to Cart</button>
             </div>
         </div>
         
+        <label class="extras-itens">
+            <input type="checkbox" class="extra-additional--checkbox">
+            <p class="extra-name"><p class="extra-price"></p></p>
+        </label>                
+        
+        <div class="cart-itens--item">
+            <img src="" class="cart-itens--item--img">
+            <h2 class="cart-itens--item-name"></h2>
+            <div class="cart-itens--item-qtarea qtarea">
+                <button class="cart-btn-qtmenos btn-qt">-</button>
+                <span class="cart-itens--item-qtarea--qt qtarea--qt"></span>
+                <button class="cart-btn-qtmais btn-qt">+</button>
+            </div>
+        </div>
         
     </div>
 
@@ -90,7 +106,7 @@
             </div>
         </section>
 
-        <section class="product product-burger">
+        <section class="product product-burger" id="burger">
             <div class="container">
                 <article class="product-body">
                     <div class="section-header">
@@ -102,7 +118,7 @@
             </div>
         </section>
 
-        <section class="product product-pizza product-light">
+        <section class="product product-pizza product-light" id="pizza">
             <div class="container">
                 <article class="product-body">
                     <div class="section-header">
@@ -124,38 +140,21 @@
             </div>
 
             <div class="product-window-info">
+                <button class="product-window-info--cancel-mobile product-window-info--cancel-default">Cancel</button>
+                <h1 class="product-window-info--name"></h1>
 
-                <h1 class="product-window-info--name">Double Burger</h1>
-
-                <p class="product-window-info--ingredients">Hamburguer, Molho Ketchup, molho mostarda, 2 rodelas de pepino, cebola desitratada, Queijo Cheddar e Pão Regular</p>
+                <p class="product-window-info--ingredients"></p>
 
                 <div class="product-window-info-extra">
-                    <h4 class="product-window-info-extra--txt">Adicional</h4>
+                    <h4 class="product-window-info-extra--txt"></h4>
 
                     <div class="product-window-info-extra-size">
                         <button data-key="0" class="btn-extra--size">Pequeno <span>4</span></button>
                         <button data-key="1" class="btn-extra--size">Médio <span>8</span></button>
                         <button data-key="2" class="btn-extra--size selected">Grande <span>12</span></button>
                     </div>
-                    <div class="product-window-info-extra-additional">
-                        <label>
-                            <input type="checkbox" name="bacon" class="extra-additional--checkbox">
-                            <p>Bacon <span>- R$ 3,50</span></p>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="bacon" class="extra-additional--checkbox">
-                            <p>Bacon <span>- R$ 3,50</span></p>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="bacon" class="extra-additional--checkbox">
-                            <p>Bacon <span>- R$ 3,50</span></p>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="bacon" class="extra-additional--checkbox">
-                            <p>Bacon <span>- R$ 3,50</span></p>
-                        </label>
+                    <div class="product-window-info-extra-additional"></div>
                         
-                    </div>
                 </div>
 
                 <div class="product-window-info--price-area">
@@ -163,16 +162,15 @@
                     <h4 class="product-window-info--price-area--txt">Preço</h4>
 
                     <div class="product-window-info--price-area-price">
-                        <span class="product-window-info--price-area-price--actual-price">R$ 25,80</span>
+                        <span class="product-window-info--price-area-price--actual-price"></span>
                         <div class="product-window-info--price-area-price-qtarea qtarea">
-                            <button class="btn-qtmenos btn-qt">-</button>
-                            <span class="product-window-info--price-area-price-qtarea--qt qtarea--qt">1</span>
-                            <button class="btn-qtmais btn-qt">+</button>
+                            <button class="btn-qtmenos-modal btn-qt">-</button>
+                            <p class="product-window-info--price-area-price-qtarea--qt qtarea--qt"></p>
+                            <button class="btn-qtmais-modal btn-qt">+</button>
                         </div>
                     </div>
                     <a href="#" class="product-window-info--add-button default-btn">ADD TO CART</a>
-                    <button class="product-window-info--cancel">Cancel</button>
-                    <button class="product-window-info--cancel-mobile">Cancel</button>
+                    <button class="product-window-info--cancel product-window-info--cancel-default">Cancel</button>
                 </div>
 
             </div>
@@ -183,7 +181,7 @@
 
     <aside>
         <section class="login">
-            <div class="close-default"></div>
+            <div class="close-default close-login"></div>
             <div class="login-image">
                 <img src="assets/images/user-img.png" alt="">
             </div>
@@ -191,7 +189,7 @@
             <div class="login-user-area">
                 <h2 class="login-user-area--txt">Login</h2>
 
-                <form action="" method="post">
+                <form method="post">
                     <label>
                         <p class="login-user-area--p">Email</p>
                         <input type="email" name="login-email" id="login-email" placeholder="e-mail address" size="27">
@@ -208,38 +206,16 @@
         </section>
 
         <section class="cart">
-            <div class="close-default"></div>
+            <div class="close-default close-cart"></div>
             <div class="cart-txt">
                 <h2 class="cart-txt-h2">Cart Itens</h2>
             </div>
             <div class="cart-itens">
 
-                <div class="cart-itens--item">
-                    <img src="assets/images/burgerBig02.jpg" alt="">
-                    <h2 class="cart-itens--item-name">Double burger</h2>
-                    <div class="cart-itens--item-qtarea qtarea">
-                        <button class="btn-qtmenos btn-qt">-</button>
-                        <span class="cart-itens--item-qtarea--qt qtarea--qt">1</span>
-                        <button class="btn-qtmais btn-qt">+</button>
-                    </div>
-                </div>
-
-                <div class="cart-itens--item">
-                    <img src="assets/images/burgerBig02.jpg" alt="">
-                    <h2 class="cart-itens--item-name">Double burger</h2>
-                    <div class="cart-itens--item-qtarea qtarea">
-                        <button class="btn-qtmenos btn-qt">-</button>
-                        <span class="cart-itens--item-qtarea--qt qtarea--qt">1</span>
-                        <button class="btn-qtmais btn-qt">+</button>
-                    </div>
-                </div>
-
             </div>
             <div class="cart-price-info">
-                <h2 class="cart-price-info--subtotal cart-price-info--default">Subtotal <span class="cart-price-info--span">R$ --,--</span></h2>
-                <h2 class="cart-price-info--discount cart-price-info--default">Desconto <span class="cart-price-info--span">R$ --,--</span></h2>
                 <h2 class="cart-price-info--total cart-price-info--default">Total <span class="cart-price-info--span">R$ --,--</span></h2>
-                <button type="submit" class="default-btn cart-price-info--button">Finalizar compra</button>
+                <button class="default-btn cart-price-info--button">Finalizar compra</button>
             </div>
         </section>
     </aside>
