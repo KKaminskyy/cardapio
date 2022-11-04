@@ -101,6 +101,7 @@ nav a:hover{
     padding: 10px;
     margin-top: 50px;
     width: 200vw;
+    transition: ease all .8s;
 }
 
 .offers-area--item{

@@ -6,12 +6,22 @@ let modalId
 let cart = []
 let currentPrice
 let priceExtras = 0
+let timer = 0
 
 
 selector('.open-cart').addEventListener('click', openCart)
 selector('.close-cart').addEventListener('click', closeCart)
 selector('.open-login').addEventListener('click', openLogin)
 selector('.close-login').addEventListener('click', closeLogin)
+
+setInterval(()=>{
+    if(timer >= 870){
+        timer = 0
+    }
+
+    selector('.offers-area').style.left = `-${timer}px`
+    timer += 290
+},5000)
 
 const productPrice = price => price.toLocaleString("pt-BR", {
     style: "currency",
