@@ -222,7 +222,7 @@ selector('.open-login').addEventListener('click', openLogin)
 selector('.close-login').addEventListener('click', closeLogin)
 
 function openLogin(){
-    if(window.screen.width >= 600){
+    if(window.screen.width < 600){
         closeMenu()
     }
     
@@ -241,10 +241,10 @@ function closeLogin(){
 }
 
 function openCart(){
-    if(window.screen.width >= 600){
+    if(window.screen.width < 600){
         closeMenu()
     }
-    
+
     if(selector('.login').style.left == '-2vw'){
         closeLogin()
     }
