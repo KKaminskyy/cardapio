@@ -265,6 +265,8 @@ selector('.menuHidden').addEventListener('click', closeMenu)
 
 
 function openMenu(){
+    closeCart()
+    closeLogin()
     selector('nav').style.display = 'flex'
     selector('.gg-menu').style.display = 'none'
     selector('.menuHidden').style.display = 'block'
