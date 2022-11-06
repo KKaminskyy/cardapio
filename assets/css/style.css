@@ -13,6 +13,8 @@ header .container{
     justify-content: space-between;
     height: 100px;
 }
+i.gg-menu{display: none;}
+i.menuHidden{display: none;}
 
 .logo{ flex: 1; }
 
@@ -506,7 +508,8 @@ aside{
     margin-top: 15px;
 }
 
-@media (max-width: 1124px){
+@media (min-width: 1000px) and (max-width: 1124px){
+    i.gg-menu{display: none;}
     header .container{max-width: 900px;}
 
     .container{padding: 0 25px;}
@@ -561,8 +564,8 @@ aside{
     .product-window-info--ingredients {margin: 2px 0;}
 }
 
-@media (max-width: 999px){
-
+@media (min-width: 601px) and (max-width: 999px){
+    i.gg-menu{display: none;}
     .offers-area--item {flex-basis: 11.5%;}
     .product-area{
         grid-template-columns: repeat(1, 1fr);
@@ -575,6 +578,58 @@ aside{
 
 @media (max-width: 600px){
 
+    header{
+        padding: 0;
+    }
+    i.gg-menu{
+        display: block;
+        top: 40%;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .menuHidden{
+        display: none;
+        top: 30%;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    nav{
+        position: absolute;
+        display: none;
+        opacity: 0;
+        background-color: var(--color06);
+        top: 99%;
+        width: 100%;
+        height: 200px;
+        transition: ease all .8s;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 114%;
+    }
+
+    nav a{
+        margin: 0;
+        padding: 0;
+    }
+
+    .open-login,
+    .open-cart{
+        height: 30px;
+    }
+
+    .logo{padding: 10px;}
+    
+    .container{
+        padding: 0px;
+    }
+    
     .offers-area{width: 347vw;}
     .offers .container{padding: 0 0;}
 
@@ -607,16 +662,12 @@ aside{
 
     .product-window-info--name { margin: 5px 0; }
     .product-window-info--ingredients {margin: 2px 0;}
-}
 
-@media (max-width: 600px){
 
     .banner-bar,
     .banner-title{
         font-size: 3rem;
     }
-    
-    nav{display: none;}
     
     .product-area{
         grid-template-columns: repeat(1, 1fr);
@@ -633,15 +684,56 @@ aside{
 }
 
 @media (max-width: 437px){
-    nav{display: none;}
+    header{
+        padding: 0;
+    }
+    i.gg-menu{
+        display: block;
+        top: 40%;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    nav{
+        position: absolute;
+        display: none;
+        opacity: 0;
+        background-color: var(--color06);
+        top: 99%;
+        width: 100%;
+        height: 200px;
+        transition: ease all .8s;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 114%;
+    }
+
+    nav a{
+        margin: 0;
+        padding: 0;
+    }
+
+    .open-login,
+    .open-cart{
+        height: 30px;
+    }
+
+    .logo{padding: 10px;}
+
+    .container{
+        padding: 0px;
+    }
 
     .banner-bar,
     .banner-title{
         font-size: 2rem;
     }
-    .container{
-        padding: 0;
-    }
+    
     .product-area {min-width: 320px}
     .default-btn {font: bold .8rem arial;}
 
@@ -674,4 +766,5 @@ aside{
         width: 305px;
     }
     
+
 }

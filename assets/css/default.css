@@ -148,13 +148,10 @@ body{
 .close-default{
     position: absolute;
     right: 20px;
-    top: 5px;
+    top: 10px;
     font-size: 30px;
     cursor: pointer;
     z-index: 5;
 }
 
-.close-default::before{
-    content: '\1F5D9';
-}
 

@@ -8,12 +8,6 @@ let currentPrice
 let priceExtras = 0
 let timer = 0
 
-
-selector('.open-cart').addEventListener('click', openCart)
-selector('.close-cart').addEventListener('click', closeCart)
-selector('.open-login').addEventListener('click', openLogin)
-selector('.close-login').addEventListener('click', closeLogin)
-
 setInterval(()=>{
     if(timer >= 870){
         timer = 0
@@ -222,7 +216,13 @@ function updatePrice(quantidade, extras=0){
 }
 
 
+selector('.open-cart').addEventListener('click', openCart)
+selector('.close-cart').addEventListener('click', closeCart)
+selector('.open-login').addEventListener('click', openLogin)
+selector('.close-login').addEventListener('click', closeLogin)
+
 function openLogin(){
+    closeMenu()
     if(selector('.cart').style.left == '-2vw'){
         closeCart()
     }
@@ -238,6 +238,7 @@ function closeLogin(){
 }
 
 function openCart(){
+    closeMenu()
     if(selector('.login').style.left == '-2vw'){
         closeLogin()
     }
@@ -252,3 +253,31 @@ function closeCart(){
     selector('.cart').style.left = '100vw'
     setTimeout(()=> selector('.cart').style.display = 'none', 50)
 }
+
+selector('.gg-menu').addEventListener('click', openMenu)
+selector('.menuHidden').addEventListener('click', closeMenu)
+
+
+function openMenu(){
+    selector('nav').style.display = 'flex'
+    selector('.gg-menu').style.display = 'none'
+    selector('.menuHidden').style.display = 'block'
+    setTimeout(()=> selector('nav').style.opacity = '1', 200)
+}
+
+function closeMenu(){
+    selector('.menuHidden').style.display = 'none'
+    selector('.gg-menu').style.display = 'block'
+    selector('nav').style.opacity = '0'
+    selector('nav').style.display = 'none'
+}
+
+window.addEventListener('resize', ()=> {
+    if(window.screen.width >= 600 && selector('nav').style.display != 'flex'){
+        openMenu()
+        selector('.menuHidden').style.display = 'none'
+    }else if (window.screen.width < 600 && selector('nav').style.display == 'flex'){
+        console.log('fechou')
+        closeMenu()
+    }
+})
